@@ -41,18 +41,43 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #d32f2f; /* deep red */
+  background: #d32f2f;
+  /* deep red */
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 #help:hover {
   background: #b71c1c;
   transform: translateY(-2px);
+}
+
+/* Subtle fade-in for new quotes */
+@keyframes quote-fade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#quote.quote-enter {
+  animation: quote-fade 320ms ease both;
+}
+
+/* Respect accessibility prefs */
+@media (prefers-reduced-motion: reduce) {
+  #quote.quote-enter {
+    animation: none;
+  }
 }
