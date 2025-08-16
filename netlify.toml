@@ -1,0 +1,9 @@
+[build]
+  functions = "netlify/functions"
+  publish = "."
+
+# Optional: force clean URLs (not required here since it's a static site)
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
