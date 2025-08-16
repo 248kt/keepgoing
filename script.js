@@ -1,4 +1,4 @@
-// Simple fetch of one random motivation
+// Fetch one random motivation from the Netlify function
 async function loadQuote() {
   const el = document.getElementById('quote');
   try {
@@ -14,8 +14,8 @@ async function loadQuote() {
   }
 }
 
-// load on page start
+// initial load
 loadQuote();
 
-// refresh button
+// refresh
 document.getElementById('refresh').addEventListener('click', loadQuote);
